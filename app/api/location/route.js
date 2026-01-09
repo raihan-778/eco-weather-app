@@ -6,5 +6,4 @@ export const GET = async () => {
   return Response.json(locationData);
 };
 
-
-const 
+``;
