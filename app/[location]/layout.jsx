@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import Image from "next/image";
 import "../globals.css";
 
@@ -6,8 +5,6 @@ export const metadata = {
   title: "EcoWeatherApp",
   description: "One Place Dashboard For Eco Informaton",
 };
-
-const inter = Inter({ subsets: ["latin"] });
 
 const LocationLayout = ({ children, aqi, temperature, weather, wind }) => {
   return (
