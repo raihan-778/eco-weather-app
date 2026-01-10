@@ -1,6 +1,6 @@
 const Location = () => {
   return (
-    <div className="wrapper">
+    <div>
       {/* <!-- image background and overlay --> */}
       <h1>Location Page</h1>
     </div>

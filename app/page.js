@@ -1,3 +1,10 @@
+import LocationDetector from "@/components/LocationDetector";
+
 export default function Home() {
-  return <div>welcome to eco weather app</div>;
+  return (
+    <div>
+      <LocationDetector />
+      welcome to eco weather app
+    </div>
+  );
 }

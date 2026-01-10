@@ -1,5 +1,14 @@
-const AQIPage = () => {
-  return <div className="text-slate-300">AqiPage</div>;
+import { AQIComponent } from "@/components/AQIComponent";
+
+const AQIPage = ({
+  params: { location },
+  searchParams: { latitude, longitude },
+}) => {
+  return (
+    <>
+      <AQIComponent location={location} lat={latitude} lon={longitude} />
+    </>
+  );
 };
 
 export default AQIPage;
