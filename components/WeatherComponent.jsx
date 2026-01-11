@@ -10,7 +10,6 @@ export const WeatherComponent = async ({ lat, lon }) => {
 
   return (
     <Card>
-      {" "}
       <h6 className="feature-name">Current Weather</h6>
       <div className="feature-main">
         <Image
