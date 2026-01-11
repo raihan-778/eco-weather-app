@@ -1,6 +1,7 @@
 export const dynamic = "force-dynamic";
 
 import { LocationInfo } from "@/components/LocationInfo";
+import { NoLocationInfo } from "@/components/NoLocationInfo";
 import { getResolvedLatLong } from "@/lib/location-info";
 
 const LocationPage = async ({
@@ -9,7 +10,13 @@ const LocationPage = async ({
 }) => {
   const resolved = await getResolvedLatLong(location, latitude, longitude);
   return (
-    <LocationInfo location={location} lat={resolved.lat} lon={resolved.lon} />
+    <>
+      {resolved?.lat && resolved.lon ? (
+        <LocationInfo lat={resolved?.lat} lon={resolved.lon} />
+      ) : (
+        <NoLocationInfo location={location} />
+      )}
+    </>
   );
 };
 export default LocationPage;

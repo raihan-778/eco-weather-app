@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <div>
       <LocationDetector />
-      welcome to eco weather app
     </div>
   );
 }
