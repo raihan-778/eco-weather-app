@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { LocationInfo } from "@/components/LocationInfo";
 
 const LocationPage = ({
