@@ -16,13 +16,23 @@ const LocationDetector = () => {
     const params = new URLSearchParams(searchParams);
 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        params.set("latitude", position.coords.latitude);
-        params.set("longitude", position.coords.longitude);
-        setLoading(false);
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          params.set("latitude", position.coords.latitude);
+          params.set("longitude", position.coords.longitude);
+          setLoading(false);
 
-        router.push(`/current?${params.toString()}`);
-      });
+          router.push(`/current?${params.toString()}`);
+        },
+        (error) => {
+          setLoading(false);
+          setError("Location access denied. Please enable location services.");
+          console.error(error);
+        }
+      );
+    } else {
+      setLoading(false);
+      setError("Geolocation is not supported by your browser.");
     }
   }, [searchParams, pathName, router]);
 
